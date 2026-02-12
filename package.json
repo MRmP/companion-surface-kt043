@@ -1,0 +1,31 @@
+{
+	"name": "companion-surface-kt043",
+	"version": "1.0.0",
+	"description": "Bitfocus Companion Surface Plugin for iDisplay KT043 keypad",
+		"license": "MIT",
+	"main": "dist/main.js",
+	"scripts": {
+		"build": "node build-config.cjs",
+		"dev": "tsc --build tsconfig.build.json --watch",
+		"lint": "eslint src"
+	},
+	"engines": {
+		"node": ">=22"
+	},
+	"dependencies": {
+		"@companion-surface/base": "~1.1.0",
+		"koffi": "^2.9.0",
+		"p-queue": "^8.1.0",
+		"tslib": "^2.8.1"
+	},
+	"devDependencies": {
+		"@companion-module/tools": "^2.4.2",
+		"@tsconfig/node22": "^22.0.5",
+		"@types/node": "^22.19.3",
+		"esbuild": "^0.27.1",
+		"eslint": "^9.39.2",
+		"typescript": "~5.9.3",
+		"typescript-eslint": "^8.50.0"
+	},
+	"packageManager": "yarn@4.12.0"
+}

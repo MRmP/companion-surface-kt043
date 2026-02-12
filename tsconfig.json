@@ -1,0 +1,21 @@
+{
+	"extends": "@tsconfig/node22/tsconfig.json",
+	"compilerOptions": {
+		"composite": true,
+		"types": ["node"],
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"importHelpers": true,
+		"pretty": true,
+		"esModuleInterop": true,
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"baseUrl": "./",
+		"paths": {
+			"*": ["./node_modules/*"]
+		}
+	},
+	"exclude": ["node_modules/**", "dist/**"],
+	"include": ["src/**/*"]
+}

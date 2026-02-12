@@ -1,0 +1,29 @@
+{
+	"type": "surface",
+	"id": "idisplay-kt043",
+	"name": "iDisplay KT043",
+	"shortname": "kt043",
+	"description": "Surface plugin for the iDisplay KT043 5x3 LCD button keypad",
+	"version": "1.0.0",
+	"license": "MIT",
+	"repository": "https://github.com/user/companion-surface-kt043",
+	"bugs": "https://github.com/user/companion-surface-kt043/issues",
+	"maintainers": [
+		{
+			"name": "Jorge"
+		}
+	],
+	"keywords": ["idisplay", "kt043", "keypad"],
+	"runtime": {
+		"type": "node22",
+		"apiVersion": "0.0.0",
+		"entrypoint": "../dist/main.js"
+	},
+	"products": ["iDisplay KT043"],
+	"usbIds": [
+		{
+			"vendorId": 65535,
+			"productIds": [4368]
+		}
+	]
+}
