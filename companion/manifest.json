@@ -3,11 +3,11 @@
 	"id": "idisplay-kt043",
 	"name": "iDisplay KT043",
 	"shortname": "kt043",
-	"description": "Surface plugin for the iDisplay KT043 5x3 LCD button keypad",
+	"description": "Surface plugin for the iDisplay KT043 5x3 LCD button keypad. Maintained by www.beleven.no",
 	"version": "1.0.0",
 	"license": "MIT",
-	"repository": "https://github.com/user/companion-surface-kt043",
-	"bugs": "https://github.com/user/companion-surface-kt043/issues",
+	"repository": "https://github.com/MRmP/companion-surface-kt043",
+	"bugs": "https://github.com/MRmP/companion-surface-kt043/issues",
 	"maintainers": [
 		{
 			"name": "Jorge"

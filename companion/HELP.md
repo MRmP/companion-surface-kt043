@@ -19,3 +19,7 @@ This surface plugin provides native support for the iDisplay KT043 5x3 LCD butto
 - Only one KT043 device can be connected at a time (SDK limitation).
 - The vendor SDK DLL must be present in the plugin's `vendor/` directory.
 - Supported on Windows (64-bit) and Linux (64-bit).
+
+### Support
+
+Maintained by [beleven.no](https://www.beleven.no)

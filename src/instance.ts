@@ -17,6 +17,7 @@ export class KT043Wrapper implements SurfaceInstance {
 	private drawQueue = new PQueue({ concurrency: 1 })
 	private iconSize = DEFAULT_ICON_SIZE
 	private deviceOpen = false
+	private buttonStates: boolean[] = new Array(KEY_COUNT).fill(false) // Track button pressed states
 
 	constructor(surfaceId: string, context: SurfaceContext) {
 		this.surfaceId = surfaceId
@@ -123,7 +124,7 @@ export class KT043Wrapper implements SurfaceInstance {
 
 			try {
 				if (drawProps.image) {
-					// Companion provides RGB888 pixel data - encode to JPEG for the SDK
+					// Companion provides RGB888 pixel data - encode to BMP for the SDK
 					const jpeg = encodeRGBtoJPEG(drawProps.image, this.iconSize, this.iconSize, 95)
 					ffi.showImageOnButton(btnIndex, jpeg)
 				} else if (drawProps.color) {
@@ -177,11 +178,20 @@ export class KT043Wrapper implements SurfaceInstance {
 			const events = ffi.waitEvent(20)
 			if (events) {
 				for (const evt of events) {
-					const controlId = buttonIndexToControlId(evt.index)
-					if (evt.state === 1) {
-						this.context.keyDownById(controlId)
-					} else if (evt.state === 0) {
-						this.context.keyUpById(controlId)
+					if (evt.index < 0 || evt.index >= KEY_COUNT) continue
+
+					const isPressed = evt.state === 1
+					const wasPressed = this.buttonStates[evt.index]
+
+					// Only report actual state changes
+					if (isPressed !== wasPressed) {
+						this.buttonStates[evt.index] = isPressed
+						const controlId = buttonIndexToControlId(evt.index)
+						if (isPressed) {
+							this.context.keyDownById(controlId)
+						} else {
+							this.context.keyUpById(controlId)
+						}
 					}
 				}
 			}

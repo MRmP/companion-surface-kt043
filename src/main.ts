@@ -49,10 +49,14 @@ const KT043Plugin: SurfacePlugin<KT043PluginInfo> = {
 			return null
 		}
 
-		const serial = device.serialNumber || 'unknown'
+		// Use a stable fixed ID to ensure consistent detection across restarts
+		// The HID serialNumber can be unreliable (empty on some USB enumerations)
+		// For multi-device support in the future, we could use the SDK's serial after opening
+		const stableId = 'default'
+		const displaySerial = device.serialNumber || 'KT043'
 		return {
-			surfaceId: `kt043:${serial}`,
-			description: `iDisplay KT043 (${serial})`,
+			surfaceId: `kt043:${stableId}`,
+			description: `iDisplay KT043 (${displaySerial})`,
 			pluginInfo: {
 				path: device.path,
 			},
