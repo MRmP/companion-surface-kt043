@@ -87,7 +87,3 @@ const KT043Plugin: SurfacePlugin<KT043PluginInfo> = {
 }
 
 export default KT043Plugin
-
-// Also expose as module.exports for CJS require() compatibility
-// Companion's SurfaceThread uses require() when __non_webpack_require__ is available
-module.exports = KT043Plugin
