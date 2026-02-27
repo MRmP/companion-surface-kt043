@@ -2,7 +2,7 @@
 	"name": "companion-surface-kt043",
 	"version": "1.0.0",
 	"description": "Bitfocus Companion Surface Plugin for iDisplay KT043 keypad. Maintained by www.beleven.no",
-		"license": "MIT",
+	"license": "MIT",
 	"main": "dist/main.js",
 	"scripts": {
 		"build": "node build-config.cjs",
@@ -25,6 +25,7 @@
 		"@types/node": "^22.19.3",
 		"esbuild": "^0.27.1",
 		"eslint": "^9.39.2",
+		"prettier": "^3.8.1",
 		"typescript": "~5.9.3",
 		"typescript-eslint": "^8.50.0"
 	},
